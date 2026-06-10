@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+  <rect width="760" height="430" fill="#ffffff"/>
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#172033">TSP pequeno: tour encontrado por Branch and Bound</text>
+  <text x="32" y="70" font-family="Arial, sans-serif" font-size="14" fill="#46505f">Una ruta completa conecta todas las ciudades y vuelve al origen. El algoritmo poda rutas parciales antes de completarlas.</text>
+  <g stroke="#d6dde8" stroke-width="1">
+    <line x1="80" y1="330" x2="690" y2="330"/>
+    <line x1="80" y1="80" x2="80" y2="330"/>
+  </g>
+  <polyline points="145,260 205,160 325,125 450,110 555,165 630,260 360,310 145,260"
+    fill="none" stroke="#2563eb" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <g font-family="Arial, sans-serif" font-size="13" font-weight="700" text-anchor="middle">
+    <g>
+      <circle cx="145" cy="260" r="14" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+      <text x="145" y="265" fill="#111827">0</text>
+    </g>
+    <g>
+      <circle cx="205" cy="160" r="14" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+      <text x="205" y="165" fill="#111827">6</text>
+    </g>
+    <g>
+      <circle cx="325" cy="125" r="14" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+      <text x="325" y="130" fill="#111827">1</text>
+    </g>
+    <g>
+      <circle cx="450" cy="110" r="14" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+      <text x="450" y="115" fill="#111827">2</text>
+    </g>
+    <g>
+      <circle cx="555" cy="165" r="14" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+      <text x="555" y="170" fill="#111827">3</text>
+    </g>
+    <g>
+      <circle cx="630" cy="260" r="14" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+      <text x="630" y="265" fill="#111827">4</text>
+    </g>
+    <g>
+      <circle cx="360" cy="310" r="14" fill="#f8fafc" stroke="#111827" stroke-width="2"/>
+      <text x="360" y="315" fill="#111827">5</text>
+    </g>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="14" fill="#1f2937">
+    <rect x="500" y="318" width="210" height="66" rx="6" fill="#eef6ff" stroke="#bfdbfe"/>
+    <text x="516" y="344" font-weight="700">Lectura:</text>
+    <text x="516" y="366">cada nodo del arbol es</text>
+    <text x="516" y="384">una ruta parcial, no el tour final.</text>
+  </g>
+</svg>

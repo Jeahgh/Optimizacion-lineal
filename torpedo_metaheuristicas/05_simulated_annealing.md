@@ -70,6 +70,12 @@ Esta regla permite salir de optimos locales sin usar memoria tabu. Tabu Search
 escapa usando restricciones temporales sobre movimientos recientes. Simulated
 Annealing escapa usando probabilidad controlada por temperatura.
 
+![Temperatura y aceptacion en Simulated Annealing](assets/sa_temperature_acceptance.svg)
+
+La lectura practica es simple: al inicio el algoritmo acepta mas riesgo. Eso le
+permite cruzar zonas malas para buscar regiones mejores. Al final acepta menos
+riesgo, porque ya deberia estar refinando una zona prometedora.
+
 ## Enfriamiento
 
 El enfriamiento define como baja la temperatura.
@@ -82,6 +88,11 @@ y puede quedar atrapado. Si es muy lento, puede explorar mejor, pero demora mas.
 
 La eleccion del esquema de enfriamiento es uno de los puntos mas importantes del
 metodo.
+
+El enfriamiento es el "ritmo" de la busqueda. Si baja muy rapido, se pierde la
+ventaja de aceptar empeoramientos y el algoritmo se vuelve casi greedy. Si baja
+muy lento, puede mejorar mas, pero el costo crece porque explora durante mas
+tiempo.
 
 ## Estructura en Python
 

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430">
+  <rect width="760" height="430" fill="#ffffff"/>
+  <text x="32" y="42" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#172033">Simulated Annealing: temperatura y aceptacion</text>
+  <text x="32" y="70" font-family="Arial, sans-serif" font-size="14" fill="#46505f">Al principio acepta mas empeoramientos. Al final se vuelve parecido a una busqueda local.</text>
+  <g transform="translate(82,110)">
+    <line x1="0" y1="240" x2="590" y2="240" stroke="#111827" stroke-width="2"/>
+    <line x1="0" y1="20" x2="0" y2="240" stroke="#111827" stroke-width="2"/>
+    <text x="252" y="278" font-family="Arial, sans-serif" font-size="14" fill="#374151">iteraciones</text>
+    <polyline points="0,45 60,72 120,98 180,122 240,145 300,166 360,185 420,203 480,220 560,232"
+      fill="none" stroke="#dc2626" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <polyline points="0,80 60,96 120,117 180,145 240,174 300,198 360,216 420,228 480,235 560,239"
+      fill="none" stroke="#2563eb" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <g font-family="Arial, sans-serif" font-size="13" fill="#111827">
+      <rect x="404" y="30" width="172" height="58" rx="6" fill="#f8fafc" stroke="#d1d5db"/>
+      <line x1="420" y1="50" x2="456" y2="50" stroke="#dc2626" stroke-width="5"/><text x="466" y="55">temperatura</text>
+      <line x1="420" y1="74" x2="456" y2="74" stroke="#2563eb" stroke-width="5"/><text x="466" y="79">prob. aceptar peor</text>
+    </g>
+    <text x="20" y="28" font-family="Arial, sans-serif" font-size="13" fill="#166534">exploracion</text>
+    <text x="486" y="214" font-family="Arial, sans-serif" font-size="13" fill="#7f1d1d">explotacion</text>
+  </g>
+</svg>

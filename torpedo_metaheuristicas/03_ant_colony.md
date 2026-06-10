@@ -81,6 +81,20 @@ hormigas se comportan de forma mas greedy.
 Esta regla es importante porque mantiene un equilibrio. La colonia aprovecha
 informacion acumulada, pero conserva exploracion al no elegir siempre lo mismo.
 
+Una forma compacta de leer la regla es esta:
+
+`peso(componente) = feromona^alpha * heuristica^beta`
+
+Despues esos pesos se transforman en probabilidades. Si un componente tiene mas
+feromona o mejor heuristica, tiene mas opcion de ser elegido, pero no queda
+garantizado. Esa incertidumbre es parte de la exploracion.
+
+![Mapa de feromonas sobre componentes](assets/aco_pheromone_map.svg)
+
+En un grafo, la feromona suele vivir sobre aristas. Una arista gruesa en el
+grafico significa que fue reforzada por buenas soluciones anteriores. Aun asi,
+una hormiga podria elegir otra arista si la probabilidad lo permite.
+
 ## Evaporacion
 
 La evaporacion reduce la feromona con el tiempo.
@@ -197,6 +211,15 @@ la heuristica local. `rho` controla cuanto se olvida en cada evaporacion.
 Muchas hormigas entregan mas exploracion por iteracion, pero tambien aumentan el
 costo computacional. Muchas iteraciones permiten mas aprendizaje, pero tambien
 pueden producir estancamiento si la feromona se concentra demasiado.
+
+Lectura rapida de parametros:
+
+- `alpha` alto: la colonia confia mas en la memoria acumulada.
+- `beta` alto: la colonia se vuelve mas greedy con la informacion local.
+- `rho` alto: se olvida mas rapido por evaporacion.
+- muchas hormigas: mas soluciones por iteracion, pero mayor costo.
+- muchas iteraciones: mas aprendizaje, pero mas riesgo de estancamiento si no
+  hay suficiente exploracion.
 
 ## Complejidad
 

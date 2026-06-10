@@ -89,6 +89,17 @@ continuas, puede ser sumar ruido.
 Mutacion es principalmente una herramienta de exploracion: permite visitar zonas
 que no aparecen solo combinando padres.
 
+![Mejora y diversidad en un algoritmo genetico](assets/ga_convergence_diversity.svg)
+
+La diversidad significa que la poblacion no esta formada por copias casi iguales.
+Es importante porque una poblacion diversa mantiene varias alternativas vivas.
+Si todos los individuos se parecen demasiado pronto, el algoritmo puede quedar
+encerrado en una zona mediocre.
+
+Ese problema se llama convergencia prematura. No significa que el algoritmo
+fallo por error de codigo, sino que la poblacion perdio variedad antes de
+explorar suficiente.
+
 ## Elitismo
 
 El elitismo copia algunos de los mejores individuos directamente a la siguiente
@@ -99,6 +110,11 @@ mutacion desfavorable.
 
 Un poco de elitismo suele ser util. Demasiado elitismo puede reducir diversidad
 y hacer que la poblacion se estanque.
+
+La idea completa queda asi: seleccion y elitismo empujan hacia lo que ya se ve
+bueno; crossover combina informacion; mutacion evita que la poblacion se cierre
+demasiado rapido. El equilibrio entre esas fuerzas es lo que hace funcionar al
+metodo.
 
 ## Estructura en Python
 

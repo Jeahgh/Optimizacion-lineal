@@ -22,12 +22,23 @@ Una busqueda local parte desde una solucion inicial y revisa soluciones cercanas
 llamadas vecinas. Si encuentra una vecina mejor, se mueve hacia ella. El problema
 es que una busqueda local simple puede quedar atrapada en un optimo local.
 
+Hill-climbing es una version muy simple de esa idea. Su regla es casi siempre:
+"si el vecino mejora, me muevo; si no mejora, me quedo". Es facil de entender,
+pero justamente por eso es limitado. Cuando llega a una solucion que no tiene
+vecinos mejores, se detiene aunque exista una mejor zona mas lejos.
+
 Tabu Search cambia esa regla. No exige moverse siempre a una solucion mejor. En
 cada iteracion elige el mejor movimiento admisible, incluso si ese movimiento
 empeora temporalmente la solucion actual.
 
 Ese detalle es importante: aceptar un empeoramiento controlado puede permitir
 salir de una zona estancada y llegar despues a mejores soluciones.
+
+![Tabu Search comparado con hill-climbing](assets/tabu_convergence_tenure.svg)
+
+La memoria tabu no significa recordar todo lo visitado. Significa recordar lo
+suficiente para no deshacer inmediatamente los ultimos movimientos. Por eso Tabu
+Search puede seguir caminando cuando hill-climbing ya se habria detenido.
 
 ## Solucion y vecindario
 
@@ -74,6 +85,10 @@ la busqueda de zonas prometedoras.
 Por eso el tenure controla una parte importante del equilibrio entre explotacion
 y exploracion. Con memoria corta se explota mas la zona actual. Con memoria mas
 larga se fuerza al algoritmo a buscar caminos distintos.
+
+Un tenure razonable no es "el mas grande posible". Si es muy pequeno, la busqueda
+puede repetir ciclos. Si es demasiado grande, el algoritmo puede prohibirse a si
+mismo movimientos utiles. La memoria sirve para orientar, no para encerrar.
 
 ## Aspiracion
 

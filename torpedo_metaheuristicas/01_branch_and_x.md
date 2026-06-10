@@ -177,6 +177,19 @@ La funcion `branch_tsp` genera hijos agregando una ciudad pendiente. La funcion 
 
 Este ejemplo muestra por que Branch and Bound no enumera rutas completas a ciegas. Muchas rutas parciales se descartan antes de completarse.
 
+![Tour TSP encontrado por Branch and Bound](assets/branch_tsp_tour.svg)
+
+La comparacion con fuerza bruta ayuda a entender la gracia del metodo.
+
+Fuerza bruta construiria todos los tours posibles y recien al final compararia.
+Branch and Bound, en cambio, trabaja con rutas parciales. Si una ruta parcial ya
+tiene una cota mala, no espera a completarla: poda esa rama.
+
+Por eso el nodo no es necesariamente una solucion final. En TSP puede ser algo
+como `0 -> 6 -> 1`, que todavia no visita todas las ciudades. Ese nodo representa
+muchas rutas futuras posibles. La cota responde una pregunta clave: incluso en
+el mejor caso, podria esta ruta parcial superar al incumbente?
+
 ## Ejemplo 2 - Mochila 0/1
 
 La mochila 0/1 es un caso muy natural para Branch and Bound porque cada decision es binaria: tomar o no tomar un item.
@@ -199,6 +212,16 @@ Branch and Bound usa cotas para decidir que ramas descartar.
 Branch and Cut agrega cortes, que son restricciones validas para fortalecer la
 relajacion. Un corte elimina soluciones artificiales de la relajacion, pero no
 elimina soluciones factibles del problema original.
+
+![Idea de Branch and Cut con subtours](assets/branch_cut_subtours.svg)
+
+En TSP, por ejemplo, una relajacion puede permitir dos ciclos separados. Eso
+puede verse barato matematicamente, pero no es un tour valido porque el viajante
+debe hacer un solo ciclo que pase por todas las ciudades.
+
+Un corte agrega una restriccion que obliga a conectar esos grupos. No esta
+"inventando" una solucion; esta eliminando una respuesta falsa que aparecio
+porque el modelo relajado era demasiado permisivo.
 
 Branch and Price genera variables o columnas durante la busqueda. Esto se usa
 cuando el modelo completo tendria demasiadas variables para construirlas todas
