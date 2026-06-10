@@ -162,6 +162,30 @@ usaron, segun su calidad.
 La idea importante es que la colonia aprende sin que exista una hormiga central.
 El aprendizaje queda guardado en la feromona compartida.
 
+## Ejemplo 1 - TSP
+
+TSP es un ejemplo natural para ACO porque una ruta se construye ciudad por ciudad.
+
+El estado es la ruta parcial, el componente es la siguiente ciudad y la feromona se asocia a la arista usada para avanzar desde una ciudad a otra.
+
+## Lectura del ejemplo TSP
+
+Cada hormiga empieza en una ciudad fija y agrega ciudades no visitadas. Para elegir la siguiente ciudad combina feromona acumulada y una heuristica local basada en distancia.
+
+Despues de construir los tours, las aristas usadas por mejores rutas reciben mas feromona. La evaporacion evita que una arista domine demasiado pronto.
+
+## Ejemplo 2 - Camino mas corto
+
+El camino mas corto en un grafo es especialmente natural para ACO, porque las hormigas pueden caminar desde un origen hasta un destino eligiendo aristas.
+
+La feromona se deposita sobre aristas que aparecen en caminos construidos. Los caminos mas cortos depositan mas feromona.
+
+## Lectura del ejemplo Camino mas corto
+
+El estado es el camino parcial. Los componentes disponibles son los vecinos no visitados del ultimo nodo.
+
+Este ejemplo muestra la intuicion original de ACO: muchas hormigas prueban caminos, los caminos buenos se refuerzan y la evaporacion mantiene abierta la exploracion.
+
 ## Parametros
 
 Los parametros mas importantes son `alpha`, `beta`, `rho`, el numero de hormigas

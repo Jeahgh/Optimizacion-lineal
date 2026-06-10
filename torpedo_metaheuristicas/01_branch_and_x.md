@@ -163,6 +163,32 @@ La idea importante es que el codigo no enumera soluciones a ciegas. Cada nodo se
 abre solo si todavia tiene posibilidad de mejorar lo mejor encontrado hasta el
 momento.
 
+## Ejemplo 1 - TSP
+
+En este ejemplo se usa Branch and Bound sobre un TSP pequeno. La solucion es una ruta completa, pero cada nodo del arbol representa una ruta parcial.
+
+El branching agrega una ciudad no visitada. La cota estima de forma optimista cuanto podria costar terminar la ruta. Si esa cota no puede mejorar al incumbente, se poda la rama.
+
+## Lectura del ejemplo TSP
+
+El objetivo es minimizar la distancia total del tour. El nodo guarda tres datos: la ruta parcial, las ciudades pendientes y el costo acumulado.
+
+La funcion `branch_tsp` genera hijos agregando una ciudad pendiente. La funcion `bound_tsp` calcula una cota inferior: toma el costo actual y suma conexiones baratas necesarias para completar la ruta.
+
+Este ejemplo muestra por que Branch and Bound no enumera rutas completas a ciegas. Muchas rutas parciales se descartan antes de completarse.
+
+## Ejemplo 2 - Mochila 0/1
+
+La mochila 0/1 es un caso muy natural para Branch and Bound porque cada decision es binaria: tomar o no tomar un item.
+
+El branching fija la decision del siguiente item. La cota se obtiene con una relajacion fraccional: se permite llenar la mochila con fracciones para estimar un valor maximo optimista.
+
+## Lectura del ejemplo Mochila
+
+En este ejemplo el problema es de maximizacion. Por eso la cota es superior: indica el mejor valor que podria alcanzarse desde un nodo.
+
+Si la cota superior de un nodo no supera al incumbente, no vale la pena seguir ramificando. Aunque la relajacion fraccional no sea una solucion valida de la mochila 0/1, sirve como limite optimista para podar.
+
 ## Branch and X
 
 La letra X indica que la estructura base de ramificar y podar puede combinarse

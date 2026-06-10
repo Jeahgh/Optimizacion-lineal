@@ -135,6 +135,30 @@ puede escapar de optimos locales.
 Al final de cada iteracion se actualiza la memoria tabu, se revisa si hay un
 nuevo incumbente y se guarda el historial de la mejor solucion.
 
+## Ejemplo 1 - TSP
+
+En TSP, una solucion es un orden de ciudades. El vecindario se construye con movimientos 2-opt: se invierte un segmento de la ruta para generar una ruta vecina.
+
+Tabu Search guarda el movimiento realizado, por ejemplo el segmento invertido, para evitar deshacerlo inmediatamente.
+
+## Lectura del ejemplo TSP
+
+El objetivo es minimizar la distancia del tour. En cada iteracion se revisan rutas vecinas y se elige la mejor admisible.
+
+Si la mejor ruta admisible es peor que la actual, igual puede aceptarse. Esto es lo que permite salir de optimos locales.
+
+## Ejemplo 2 - Scheduling
+
+Scheduling es un caso donde Tabu Search suele ser util porque pequenas permutaciones del orden de tareas pueden cambiar mucho el resultado.
+
+Aqui se usa una maquina unica con trabajos que tienen tiempo de procesamiento, fecha de entrega y peso de atraso. La solucion es un orden de trabajos y el objetivo es minimizar la tardanza ponderada total.
+
+## Lectura del ejemplo Scheduling
+
+El vecindario se construye intercambiando dos trabajos del orden actual. El movimiento tabu es el par de posiciones intercambiadas.
+
+Este ejemplo es bueno para Tabu porque el algoritmo puede aceptar un orden temporalmente peor para escapar de una secuencia localmente buena, pero globalmente limitada.
+
 ## Parametros
 
 Los parametros principales son el tenure, el numero de iteraciones y el

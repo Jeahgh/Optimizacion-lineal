@@ -149,6 +149,30 @@ incumbente.
 La idea importante es que el algoritmo no mejora una solucion aislada, sino que
 hace evolucionar una poblacion completa.
 
+## Ejemplo 1 - TSP
+
+En TSP, un individuo es una permutacion de ciudades. La poblacion contiene muchas rutas candidatas.
+
+El crossover debe cuidar que el hijo siga siendo una permutacion valida, sin ciudades repetidas ni ciudades faltantes.
+
+## Lectura del ejemplo TSP
+
+El fitness se define como el negativo de la distancia, porque el motor genetico maximiza fitness pero TSP minimiza distancia.
+
+La mutacion invierte un segmento de la ruta. Esto mantiene una permutacion valida y agrega diversidad a la poblacion.
+
+## Ejemplo 2 - Mochila 0/1
+
+La mochila 0/1 es natural para algoritmos geneticos porque una solucion puede representarse como un cromosoma binario.
+
+Cada gen indica si un item se toma o no. El fitness premia valor alto y penaliza soluciones que superan la capacidad.
+
+## Lectura del ejemplo Mochila
+
+El crossover mezcla partes de dos cromosomas. La mutacion cambia bits para explorar combinaciones nuevas.
+
+Este ejemplo muestra por que la codificacion es central en algoritmos geneticos: el motor es el mismo, pero los operadores dependen del tipo de solucion.
+
 ## Parametros
 
 Los parametros principales son tamano de poblacion, generaciones, tasa de cruce,

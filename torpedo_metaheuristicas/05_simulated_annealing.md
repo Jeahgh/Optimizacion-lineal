@@ -130,6 +130,30 @@ La idea importante es que el algoritmo no evita todos los malos movimientos. Los
 permite al comienzo para explorar, pero los acepta cada vez menos a medida que la
 temperatura baja.
 
+## Ejemplo 1 - TSP
+
+En TSP, Simulated Annealing parte desde una ruta y propone vecinos con movimientos 2-opt.
+
+Al comienzo puede aceptar rutas peores porque la temperatura es alta. Al final se vuelve mas estricto y se parece mas a una busqueda local.
+
+## Lectura del ejemplo TSP
+
+El objetivo es minimizar distancia. El vecino se genera invirtiendo un segmento de la ruta.
+
+Este ejemplo permite ver la diferencia con Tabu: aqui no hay memoria tabu. El escape de optimos locales se logra aceptando empeoramientos con probabilidad controlada por temperatura.
+
+## Ejemplo 2 - Rastrigin
+
+La funcion Rastrigin es un ejemplo continuo con muchos optimos locales. Por eso es buena para Simulated Annealing.
+
+La solucion es un vector de numeros reales y el vecino se genera agregando un pequeno ruido aleatorio.
+
+## Lectura del ejemplo Rastrigin
+
+El minimo global esta cerca de cero, pero la superficie tiene muchos valles locales. Una busqueda greedy puede quedar atrapada rapidamente.
+
+Simulated Annealing puede aceptar movimientos peores al inicio, lo que le permite saltar entre valles antes de enfriarse.
+
 ## Parametros
 
 Los parametros principales son la temperatura inicial, la tasa de enfriamiento,
